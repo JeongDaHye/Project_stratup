@@ -1,0 +1,25 @@
+<%= bootstrap_form_for(@postnew2) do |f| %>
+  <% if @postnew2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@postnew2.errors.count, "error") %> prohibited this postnew2 from being saved:</h2>
+
+      <ul>
+      <% @postnew2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div class="field">
+   
+    <%= f.text_area :content,class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
